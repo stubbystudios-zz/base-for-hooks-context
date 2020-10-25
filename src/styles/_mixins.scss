@@ -1,0 +1,58 @@
+@import "./variables";
+
+@function calcRem($size) {
+  $rem-size: $size / 16px;
+  @return #{$rem-size}rem;
+}
+
+@mixin font-size($size: calcRem(16px), $weight: normal) {
+  font-size: $size;
+  font-size: calcRem($size);
+  font-weight: $weight;
+}
+
+@mixin gradient350($start: $blue, $end: $blue-bright) {
+  background: $start;
+  background: linear-gradient(350deg, $start 40%, $end 85%);
+}
+
+@mixin font-set($family: $header-font, $font-size: calcRem(16px)) {
+  font-family: $family;
+
+  @include font-size();
+}
+
+@mixin success-error-box($bg: $success, $text: $black) {
+  background: $bg;
+  border: 1px solid darken($bg, 15);
+  border-radius: 8px;
+  color: $text;
+  margin-bottom: calcRem(16px);
+  padding: calcRem(16px);
+}
+
+@mixin breakpoint($width: $md) {
+  @media screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin button($bg: $brand-e, $clr: $white) {
+  background: $bg;
+  border: 0;
+  border-radius: 20px;
+  color: $clr;
+  cursor: pointer;
+  padding: calcRem(8px) calcRem(16px);
+
+  &:hover {
+    background: darken($bg, 20%);
+  }
+}
+
+@mixin inputBox($border-color: $black-500) {
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  margin-right: calcRem(8px);
+  padding: calcRem(8px);
+}
