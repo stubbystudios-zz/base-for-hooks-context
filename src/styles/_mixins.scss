@@ -37,22 +37,11 @@
   }
 }
 
-@mixin button($bg: $brand-e, $clr: $white) {
-  background: $bg;
-  border: 0;
-  border-radius: 20px;
-  color: $clr;
-  cursor: pointer;
-  padding: calcRem(8px) calcRem(16px);
-
-  &:hover {
-    background: darken($bg, 20%);
-  }
-}
-
 @mixin inputBox($border-color: $black-500) {
   border: 1px solid $border-color;
   border-radius: 4px;
   margin-right: calcRem(8px);
   padding: calcRem(8px);
 }
+
+@import "../styles/buttons";

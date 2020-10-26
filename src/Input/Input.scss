@@ -1,0 +1,14 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.input-component {
+  .input-box {
+    margin-right: calcRem(8px);
+
+    @include inputBox();
+  }
+
+  .submit-button {
+    @include button();
+  }
+}

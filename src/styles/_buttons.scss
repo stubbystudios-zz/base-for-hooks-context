@@ -1,0 +1,49 @@
+@mixin button($btn-color-1: $white, $btn-color-2: $brand-e) {
+  background: $btn-color-1;
+  border: 2px solid $btn-color-2;
+  border-radius: 4px;
+  color: $btn-color-2;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  overflow: hidden;
+  padding: calcRem(8px) calcRem(12px);
+  position: relative;
+
+  span {
+    position: relative;
+    z-index: 10;
+  }
+
+  @include font-size(14px);
+
+  &:after {
+    background: $btn-color-2;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease-in-out;
+    width: 0;
+  }
+
+  &:hover {
+    background: lighten($btn-color-2, 10%);
+    border: 2px solid $btn-color-2;
+    color: $btn-color-1;
+
+    &:after {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.btn {
+  @include button();
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
