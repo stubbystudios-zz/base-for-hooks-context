@@ -1,0 +1,12 @@
+@import "../styles/mixins";
+
+.component-language-picker {
+  align-items: center;
+  display: flex;
+  padding: calcRem(16px);
+
+  li {
+    cursor: pointer;
+    margin-right: calcRem(16px);
+  }
+}
