@@ -1,5 +1,6 @@
 const languageStrings = {
   en: {
+    title: 'Jotto Word Game',
     congrats: 'Congratulations! You guessed the word!',
     submit: 'Submit',
     guessPrompt: 'Try to guess the secret word!',
@@ -9,6 +10,7 @@ const languageStrings = {
     matchingLettersColumnHeader: 'Matching Letters',
   },
   emoji: {
+    title: '🎮🔥',
     congrats: '🎯🎉',
     submit: '🚀',
     guessPrompt: '🤔🤫🔤',

@@ -1,10 +1,10 @@
 import React from 'react';
 import hookActions from './actions/hookActions';
-import languageContext from './contexts/languageContext';
-import languageContexts from './contexts/languageContext';
 
-import Input from './Input/Input';
+import languageContext from './contexts/languageContext';
+import stringsModule from './helpers/strings';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
+import Input from './Input/Input';
 
 /**
  * Reducer to update state, called automatically by dispatch.
@@ -25,6 +25,8 @@ function reducer(state, action) {
 }
 
 function App() {
+  const language = React.useContext(languageContext);
+
   const [state, dispatch] = React.useReducer(
     reducer,
     { secretWord: null, language: 'en' }
@@ -59,7 +61,7 @@ function App() {
         </section>
         <div className='container'>
           <header>
-            <h1>Jotto Word Game</h1>
+            <h1>{stringsModule.getStringByLanguage(language, 'title')}</h1>
           </header>
           <Input secretWord={state.secretWord} />
         </div>
